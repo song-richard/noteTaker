@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, 'develop', 'public')));
 app.use(express.json())
 
+app.get('/', (req, res) => {
+    res.sendFile('index.html', { root: path.join(__dirname, 'develop', 'public') });
+})
+
 //GET route and request to retrieve current notes
 app.get('/api/notes', (req, res) => {
     fs.readFile(path.join(__dirname, 'develop', 'db', 'db.json'), 'utf8', (err, data) => {
