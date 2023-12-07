@@ -21,7 +21,7 @@ Ensure that you have Node.js installed on your machine.
    npm start
 
 ## Links
-Link to Deployed Application: https://nameless-oasis-86361-4be2f8bf5fd5.herokuapp.com/ <br>
+Link to Deployed Application: https://notetaker-365-0a846ef113cd.herokuapp.com/ <br>
 Link to GitHub Repository: https://github.com/song-richard/noteTaker
 
 ## Contributors
