@@ -12,8 +12,8 @@ app.use(express.static(path.join(__dirname, 'develop', 'public')));
 app.use(express.json())
 
 app.get('/', (req, res) => {
-app.use(express.static(path.join(__dirname, 'develop', 'public')));
-})
+    res.sendFile('index.html', { root: path.join(__dirname, 'develop', 'public') });
+});
 
 //GET route and request to retrieve current notes
 app.get('/api/notes', (req, res) => {
@@ -69,7 +69,7 @@ app.get('/notes', (req, res) => {
 
 //GET route for '*' wildcard/all other routes
 app.get('*', (req, res) => {
-    res.sendFile('assets/js/index.js', { root: path.join(__dirname, 'develop', 'public'), headers: {'Content-Type': 'application/javascript'} });
+    res.sendFile('index.html', { root: path.join(__dirname, 'develop', 'public') });
 });
 
 //Started server on port listed on 'PORT'
