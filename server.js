@@ -69,7 +69,7 @@ app.get('/notes', (req, res) => {
 
 //GET route for '*' wildcard/all other routes
 app.get('*', (req, res) => {
-    res.sendFile('index.html', { root: path.join(__dirname, 'develop', 'public') });
+    res.sendFile('assets/js/index.js', { root: path.join(__dirname, 'develop', 'public'), headers: {'Content-Type': 'application/javascript'} });
 });
 
 //Started server on port listed on 'PORT'
