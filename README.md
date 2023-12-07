@@ -26,4 +26,3 @@ Link to GitHub Repository: https://github.com/song-richard/noteTaker
 
 ## Contributors
 Richard Song - https://github.com/song-richard
-
