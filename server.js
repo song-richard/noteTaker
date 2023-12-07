@@ -8,16 +8,16 @@ const { v4: uuidv4 } = require('uuid');
 const PORT = process.env.PORT || 3000;
 
 //Middleware
-app.use(express.static(path.join(__dirname, 'develop', 'public')));
+app.use(express.static(path.join(__dirname, 'Develop', 'public')));
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html', { root: path.join(__dirname, 'develop', 'public') });
+    res.sendFile('index.html', { root: path.join(__dirname, 'Develop', 'public') });
 });
 
 //GET route and request to retrieve current notes
 app.get('/api/notes', (req, res) => {
-    fs.readFile(path.join(__dirname, 'develop', 'db', 'db.json'), 'utf8', (err, data) => {
+    fs.readFile(path.join(__dirname, 'Develop', 'db', 'db.json'), 'utf8', (err, data) => {
       if (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -30,7 +30,7 @@ app.get('/api/notes', (req, res) => {
 
 //POST request and route for posting new notes
   app.post('/api/notes', (req, res) => {
-    fs.readFile(path.join(__dirname, 'develop', 'db', 'db.json'), 'utf8', (err, data) => {
+    fs.readFile(path.join(__dirname, 'Develop', 'db', 'db.json'), 'utf8', (err, data) => {
       if (err) {
         console.error(err);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -47,7 +47,7 @@ app.get('/api/notes', (req, res) => {
         notes.push(newNote);
   
         fs.writeFile(
-          path.join(__dirname, 'develop', 'db', 'db.json'),
+          path.join(__dirname, 'Develop', 'db', 'db.json'),
           JSON.stringify(notes),
           (err) => {
             if (err) {
@@ -64,12 +64,12 @@ app.get('/api/notes', (req, res) => {
   
 //GET route for /notes
 app.get('/notes', (req, res) => {
-    res.sendFile('notes.html', { root: path.join(__dirname, 'develop', 'public') });
+    res.sendFile('notes.html', { root: path.join(__dirname, 'Develop', 'public') });
 });
 
 //GET route for '*' wildcard/all other routes
 app.get('*', (req, res) => {
-    res.sendFile('index.html', { root: path.join(__dirname, 'develop', 'public') });
+    res.sendFile('index.html', { root: path.join(__dirname, 'Develop', 'public') });
 });
 
 //Started server on port listed on 'PORT'
