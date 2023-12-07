@@ -8,11 +8,11 @@ const { v4: uuidv4 } = require('uuid');
 const PORT = process.env.PORT || 3000;
 
 //Middleware
-app.use(express.static(path.join(__dirname, 'develop', 'assets')));
+app.use(express.static(path.join(__dirname, 'develop', 'public')));
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html', { root: path.join(__dirname, 'develop', 'public') });
+app.use(express.static(path.join(__dirname, 'develop', 'public')));
 })
 
 //GET route and request to retrieve current notes
